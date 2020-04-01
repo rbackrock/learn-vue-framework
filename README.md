@@ -4,4 +4,4 @@
 
 单独讲解的前端展示代码保存于根目录的 frontend 文件夹
 
-讲解的内容大纲在该项目的 wiki 中
+讲解的内容大纲在该项目的 [wiki](https://github.com/rbackrock/learn-vue-framework/wiki) 中
