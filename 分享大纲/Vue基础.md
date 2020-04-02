@@ -93,6 +93,17 @@
 </table>
 
 
+### 编译器和运行时区别
+
+```javascript
+// 需要编译器
+new Vue({
+  template: '<div>{{ hi }}</div>'
+})
+```
+
+
+
 ### 引入
 
 [example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
@@ -129,17 +140,19 @@
 
 ### 计算属性/侦听器
 
-[example3.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example3.html)
+[example4.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example4.html)
+
+
+
+### Class 与 Style
+
+代码演示
 
 
 
 ### 条件与循环
 
 代码演示
-
-
-
-
 
 
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-bind:class="classObject">{{ msg }}</p>
+    <p v-bind:style="styleObject">又红又大</p>
+  </div>
+
+  <script>
+    /**
+     * 
+     * Vue 处理 class 和 style 的写法很多，这里就介绍一种个人觉得比较好的方式，另外几种书写方式详见官方文档
+     * 
+     * # css 属性可以用驼峰或者断线分割来命名，个人推荐断线分割
+     * # 绑定内敛样式时，会自动检测 css3 属性，然后添加浏览器兼容性前缀
+     * 
+     **/
+    var vm = new Vue({
+      el: '#app', 
+      data: { 
+        msg: 'hello',
+        classObject: {
+          active: true,
+          large: false
+        },
+        styleObject: {
+          color: '#CC0033',
+          'font-size': '60px'
+        }
+      }
+    });
+  </script>
+</body>
+</html>
