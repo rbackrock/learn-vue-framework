@@ -95,13 +95,15 @@
 
 ### 引入
 
-代码演示
+[example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
 
 
 
 ### Hello World
 
-代码演示
+介绍  [Vue Devtools](https://github.com/vuejs/vue-devtools#vue-devtools) 开发工具
+
+[example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
 
 
 
@@ -109,7 +111,15 @@
 
 ### Vue 实例
 
-example1.html
+[example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
+
+
+
+### 生命周期
+
+[example2.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example2.html)
+
+![生命周期](https://cn.vuejs.org/images/lifecycle.png)
 
 
 
