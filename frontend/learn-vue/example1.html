@@ -4,43 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./css/example.css">
-  <!-- 开发环境 -->
+  <!-- 引入 vue -->
   <script src="./js/vue.js"></script>
-  <!-- 生产环境 -->
-  <!-- <script src="./js/vue.min.js"></script> -->
 </head>
 <body>
   <div id="app">
-    {{ message }}
-  </div>
-
-  <div id="app-2">
-    <span v-bind:title="message">
-      鼠标悬停几秒钟查看此处动态绑定的提示信息！
-    </span>
+    {{ msg }}
   </div>
 
   <script>
-    /**
-     * 基本使用
-     *  
-     * # 数据驱动
-     * 
-     **/
     var app = new Vue({
       el: '#app',
       data: {
-        message: 'Hello Vue!'
+        msg: 'Hello World!'
       }
     });
-
-    var app2 = new Vue({
-      el: '#app-2',
-      data: {
-        message: '页面加载于 ' + new Date().toLocaleString()
-      }
-    })
   </script>
 </body>
 </html>
