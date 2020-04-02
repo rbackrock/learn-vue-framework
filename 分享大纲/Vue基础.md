@@ -123,6 +123,12 @@
 
 ### 插值/指令/缩写
 
+[example3.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example3.html)
+
+
+
+### 计算属性/侦听器
+
 代码演示
 
 
@@ -130,6 +136,10 @@
 ### 条件与循环
 
 代码演示
+
+
+
+
 
 
 
