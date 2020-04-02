@@ -21,7 +21,7 @@
 
 ## 安装/引用
 
-介绍不同开发思路下的 Vue 构建版本区别
+介绍不同开发思路下的 Vue 构建版本区别d
 
 ### 传统前端
 
@@ -101,9 +101,9 @@
 
 ### Hello World
 
-介绍  [Vue Devtools](https://github.com/vuejs/vue-devtools#vue-devtools) 开发工具
-
 [example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
+
+介绍  [Vue Devtools](https://github.com/vuejs/vue-devtools#vue-devtools) 开发工具
 
 
 
@@ -120,6 +120,10 @@
 [example2.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example2.html)
 
 ![生命周期](https://cn.vuejs.org/images/lifecycle.png)
+
+### 插值/指令/缩写
+
+代码演示
 
 
 

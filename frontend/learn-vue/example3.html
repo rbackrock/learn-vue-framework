@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>{{ msg }}</p>
+    <p v-html="htmlStr"></p>
+    <p><span v-bind:class="className">{{ msg }}</span></p>
+    <p><span v-bind:class="className">{{ msg }}</span></p>
+  </div>
+
+  <script>
+    /**
+     * 
+     * Vue 使用双大括号来进行数据绑定
+     * 
+     * # v-html - 动态渲染 html 代码，要特别注意使用安全
+     * # v-bind - 数据绑定不能直接作用于 html 标签上的 attribute 
+     * # 双大括号的语法里支持单个表达式，但不支持语句
+     * # 关于缩写
+     * 
+     **/ 
+    var vm = new Vue({
+      el: '#app',
+      data: { 
+        msg: 'Hello',
+        htmlStr: '<span style="color: red;">我变红了</span>',
+        className: 'green'
+      }
+    });
+  </script>
+</body>
+</html>
