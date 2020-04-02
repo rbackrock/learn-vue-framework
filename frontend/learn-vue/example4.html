@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入 vue -->
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>正常单词：{{ msg }}</p>
+    <p>添加符号：{{ changeMsg }}</p>
+  </div>
+
+  <script>
+    /**
+     * 
+     * # 再一次理解数据驱动视图
+     * # 计算属性
+     * # 侦听属性 - 当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的
+     * 
+     **/
+    var vm = new Vue({
+      el: '#app', 
+      data: { 
+        msg: 'hello'
+      },
+      computed: {
+        changeMsg: function() {
+          return this.msg.split('').map(function(currentVal, index, originArray) {
+            if (index !== (originArray.length - 1)) {
+              return currentVal + ' * ';
+            }
+
+            return currentVal;
+          }).join('');
+        }
+      },
+      watch: {
+        msg: function() {
+          console.log('我是 Msg 有人在改变我的值');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

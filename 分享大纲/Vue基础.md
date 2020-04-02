@@ -129,7 +129,7 @@
 
 ### 计算属性/侦听器
 
-代码演示
+[example3.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example3.html)
 
 
 

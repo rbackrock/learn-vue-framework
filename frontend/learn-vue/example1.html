@@ -9,7 +9,8 @@
 </head>
 <body>
   <div id="app">
-    {{ msg }}
+    <p>{{ msg }}</p>
+    <p>{{ otherShow() }}</p>
   </div>
 
   <script>
@@ -26,6 +27,14 @@
       el: '#app', // 以已经存在的 DOM 作为 Vue 实例的挂在目标 - 可以是 string | Element
       data: { // 绑定的数据
         msg: 'Hello World!'
+      },
+      methods: {
+        show: function() {
+          return '我是一个普通方法';
+        },
+        otherShow: function() {
+          return this.show();
+        }
       }
     });
   </script>
