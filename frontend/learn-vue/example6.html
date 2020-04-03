@@ -8,13 +8,25 @@
   <script src="./js/vue.js"></script>
 </head>
 <body>
-  <div id="app">
+  <div id="condition">
     <p v-if="show">为 true 的时候显示</p>
     <p v-else>为 false 的时候显示</p>
     <hr />
     <p v-if="1 === 1">表达式的判断</p>
     <hr />
     <p v-show="show">v-show 的展示</p>
+    <hr />
+  </div>
+  <div id="loop">
+    <ul v-for="fruit of fruits">
+      <li>{{ fruit.name }}</li>
+    </ul>
+    <hr />
+    <ul v-for="(fruit, index) in fruits">
+      <li v-bind:key="fruit.uuid">{{ index }} - {{ fruit.name }}</li>
+    </ul>
+    <hr />
+    <p v-for="(val, name) of userInfo">{{ name }} - {{ val }}</p>
   </div>
 
   <script>
@@ -30,12 +42,101 @@
      * # 不推荐 v-if 和 v-for 同时使用
      * 
      **/
-    var vm = new Vue({
-      el: '#app', 
+    var conditionVm = new Vue({
+      el: '#condition', 
       data: {
         show: true
       }
     });
+
+    /**
+     * 
+     * 循环表达式可以用 in 或者 of 推荐使用 of 它更符合 JavaScript 迭代器的使用习惯
+     * 
+     * # Vue 的循环除了数组以外也只是迭代对象
+     * # 除非循环的对象非常简单或者是刻意依赖默认行为以获取性能上的提升，否则最佳实践为添加 key 属性
+     * # 不要使用 index 来当做 key 的值
+     * 
+     * 
+     **/
+    var loopVm = new Vue({
+      el: '#loop',
+      data: {
+        fruits: [
+          {
+            uuid: 'cb1c5438b5ae3611a37500429e3145f6',
+            name: '苹果'
+          },
+          {
+            uuid: '61977644eb8a3667ae0b2a4d505c94aa',
+            name: '香蕉'
+          },
+          {
+            uuid: 'dd3686e4a827384a80100430c70f26b2',
+            name: '梨'
+          }
+        ],
+        userInfo: {
+          name: '小明',
+          gender: '男',
+          job: '码农'
+        }
+      }
+    });
+
+    /**
+     * 
+     * 下面原生数组方法会被 Vue 进行特殊包括，会触发视图更新
+     * 
+     * Array.prototype.push
+     * Array.prototype.pop
+     * Array.prototype.shift
+     * Array.prototype.unshift
+     * Array.prototype.splice
+     * Array.prototype.sort
+     * Array.prototype.reverse
+     * 
+     **/
+
+    // 测试 Array.prototype.push
+    // loopVm.$data.fruits.push({
+    //   uuid: '5d43c4f8dc663477950161497b61d672',
+    //   name: '香蕉'
+    // });
+    
+    /**
+     * 
+     * 例如下面这几个原生数组方法不会改变原数组，但是会提供一个新数组，这时可以用新数组代替旧的数组
+     * 
+     * Array.prototype.filter
+     * Array.prototype.concat
+     * Array.prototype.slice
+     * ...
+     * 
+     **/
+
+    // 测试 concat
+    // loopVm.$data.fruits = loopVm.$data.fruits.concat([{
+    //   uuid: 'd3252560ede2367184510f52cd414248',
+    //   name: '西瓜'
+    // }]);
+
+    /**
+     * 
+     * 单独修改 data 里面的值不要使用 array[index] 的方式直接修改，而应该使用 Vue.set 的方式
+     * 
+     **/
+
+    // 测试
+    // Vue.set(loopVm.$data.fruits, 0, {
+    //   uuid: '58fd40e91c3232a6a35577b5694332f2',
+    //   name: '我不是原来的苹果'
+    // });
+
+    // loopVm.$set(loopVm.$data.fruits, 0, {
+    //   uuid: '58fd40e91c3232a6a35577b5694332f2',
+    //   name: '我不是原来的苹果'
+    // });
   </script>
 </body>
 </html>
