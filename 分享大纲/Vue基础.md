@@ -144,7 +144,7 @@ new Vue({
 
 
 
-### Class 与 Style
+### Class/Style
 
 [example5.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example5.html)
 
