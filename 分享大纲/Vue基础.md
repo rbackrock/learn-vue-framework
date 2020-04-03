@@ -152,7 +152,7 @@ new Vue({
 
 ### 条件/循环
 
-代码演示
+[example6.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example6.html)
 
 
 
