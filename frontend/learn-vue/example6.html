@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-if="show">为 true 的时候显示</p>
+    <p v-else>为 false 的时候显示</p>
+    <hr />
+    <p v-if="1 === 1">表达式的判断</p>
+    <hr />
+    <p v-show="show">v-show 的展示</p>
+  </div>
+
+  <script>
+    /**
+     * 
+     * 条件判断基本结构和编程语言一样
+     * 
+     * # 判断条件可以是表达式
+     * # 关于 key - Vue 除了高效地渲染元素以外，可以复用元素，详见文档的登录示例 https://cn.vuejs.org/v2/guide/conditional.html#%E7%94%A8-key-%E7%AE%A1%E7%90%86%E5%8F%AF%E5%A4%8D%E7%94%A8%E7%9A%84%E5%85%83%E7%B4%A0
+     * # v-if 只有在第一次为真时，才开始渲染条件块
+     * # v-show 总是会被渲染，只是简单的切换 css 的 display 属性
+     * # v-if 有更高的开销，频繁切换考虑使用 v-show 条件很少被改变时，使用 v-if
+     * # 不推荐 v-if 和 v-for 同时使用
+     * 
+     **/
+    var vm = new Vue({
+      el: '#app', 
+      data: {
+        show: true
+      }
+    });
+  </script>
+</body>
+</html>
