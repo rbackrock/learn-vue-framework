@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="count">计数</button>
+    <p>我被点击了 {{ counter }} 次</p>
+    <button v-on:click="getInfo({name: '小明', gender: '男'}, $event)">点击传递的对象信息</button>
+    <p><a href="http://www.baidu.com" v-on:click.prevent="preventDefaultExamp">不会跳百度</a></p>
+  </div>
+
+  <script>
+    /**
+     * 
+     * 虽然 v-on 指令中可以直接写表达式，但是不推荐直接这样使用，事件函数推荐写在 methods 中
+     *
+     * # v-on 表达式中除了传递基本数据类型也可以传递对象
+     * # Vue 提供了事件修饰符专门处理例如 event.preventDefault() 和 event.stopPropagation() 以保证事件方法只有纯粹的数据逻辑
+     * # 按键修饰符和按键码的使用请参考文档：https://cn.vuejs.org/v2/guide/events.html#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6
+     * # 鼠标按键修饰符的使用请参考文档：https://cn.vuejs.org/v2/guide/events.html#%E9%BC%A0%E6%A0%87%E6%8C%89%E9%92%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6
+     * 
+     **/
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        counter: 0
+      },
+      methods: {
+        count: function(evt) {
+          this.$data.counter++;
+        },
+        getInfo(info, evt) {
+          console.log(info, evt);
+        },
+        preventDefaultExamp: function() {
+          // ...
+        }
+      }
+    });
+  </script>
+</body>
+</html>
