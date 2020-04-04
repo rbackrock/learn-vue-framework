@@ -164,7 +164,7 @@ new Vue({
 
 ### 表单
 
-代码演示
+[example8.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example8.html)
 
 
 
