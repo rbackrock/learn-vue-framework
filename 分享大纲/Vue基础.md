@@ -56,8 +56,6 @@
     </tr>
   </tbody>
 </table>
-
-
 ### 现代前端
 
 <table style="text-align: center;">
@@ -91,8 +89,6 @@
     </tr>
   </tbdoy>
 </table>
-
-
 ### 编译器和运行时区别
 
 ```javascript
@@ -102,13 +98,9 @@ new Vue({
 })
 ```
 
-
-
 ### 引入
 
 [example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
-
-
 
 ### Hello World
 
@@ -124,8 +116,6 @@ new Vue({
 
 [example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
 
-
-
 ### 生命周期
 
 [example2.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example2.html)
@@ -136,37 +126,25 @@ new Vue({
 
 [example3.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example3.html)
 
-
-
 ### 计算属性/侦听器
 
 [example4.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example4.html)
-
-
 
 ### Class/Style
 
 [example5.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example5.html)
 
-
-
 ### 条件/循环
 
 [example6.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example6.html)
-
-
 
 ### 事件
 
 [example7.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example7.html)
 
-
-
 ### 表单
 
 [example8.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example8.html)
-
-
 
 ### 自定义组件
 
