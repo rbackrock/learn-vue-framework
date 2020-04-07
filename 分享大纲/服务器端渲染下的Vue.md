@@ -46,7 +46,10 @@
 }
 ```
 
+后端对应代码
 
+* [ResponseCode.java](https://github.com/rbackrock/learn-vue-framework/blob/master/src/main/java/com/example/common/ResponseCode.java)
+* [ServerResponse.java](https://github.com/rbackrock/learn-vue-framework/blob/master/src/main/java/com/example/common/ServerResponse.java)
 
 # ElementUI 介绍
 
@@ -62,7 +65,7 @@
 
 # 我想再聊一下 Thymeleaf
 
-从前端开发的角度，我想聊一下为什么我推荐使用 Thymeleaf 作为模板引擎
+从前端的角度，我想聊一下为什么我推荐使用 Thymeleaf 作为模板引擎
 
 * 不启动后端项目，页面一样可以打开
 * 表达式在指令中编写
