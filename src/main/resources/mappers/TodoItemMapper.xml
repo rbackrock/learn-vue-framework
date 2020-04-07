@@ -86,4 +86,17 @@
     set status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAll" resultType="com.example.pojo.TodoItem">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from todo_item
+    where status = 1
+  </select>
+  <update id="removeTodoItemById" parameterType="java.lang.Integer" >
+    update todo_item
+    set status = 0
+    where id = #{id}
+  </update>
 </mapper>

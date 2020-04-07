@@ -9,19 +9,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/")
 public class ApiController {
     @Autowired
     private ITodoService iTodoService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "test/{id}")
-    public ServerResponse<TodoItem> findItem(@PathVariable Integer id) {
-        return iTodoService.findTodoItemById(id);
+    @RequestMapping(method = RequestMethod.GET, value = "todoList")
+    public ServerResponse<List<TodoItem>> findTodoList() {
+        return iTodoService.findTodoList();
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "todoItem")
-    public ServerResponse<TodoItem> addItem(TodoItem todoItem) {
+    public ServerResponse addItem(TodoItem todoItem) {
         return iTodoService.addTodoItem(todoItem);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "todoItem/{id}")
+    public ServerResponse removeItemById(@PathVariable Integer id) {
+        return iTodoService.removeTodoItemById(id);
     }
 }

@@ -148,7 +148,7 @@ new Vue({
 
 [example8.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example8.html)
 
-### 自定义组件
+### 自定义组件/Axios
 
 [example9.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example9.html)
 

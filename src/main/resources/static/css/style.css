@@ -1,0 +1,23 @@
+body {
+  font-size: 36px;
+}
+
+.red {
+  color: #CC0033
+}
+
+.green {
+  color: #009900;
+}
+
+.active {
+  color: #0099FF;
+}
+
+.err {
+  color: #CC0000;
+}
+
+.large {
+  font-size: 50px;
+}

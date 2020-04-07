@@ -2,11 +2,127 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>例子</title>
-    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <title>demo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- 引入 Vue -->
+    <script th:src="@{/js/vue.js}"></script>
+    <!-- 引入 Element -->
+    <link rel="stylesheet" th:href="@{/lib/element/index.css}">
+    <script th:src="@{/lib/element/index.js}"></script>
+    <!-- 引入 axios 异步请求库 -->
+    <script th:src="@{/js/es6-promise.min.js}"></script>
+    <script th:src="@{/js/axios.js}"></script>
 </head>
 <body>
-    <h3 th:text="${msg}"></h3>
-    <div>hello</div>
+    <div id="root">
+        <el-row :gutter="20" style="margin-bottom: 20px;">
+            <el-col :span="16">
+                <el-input placeholder="请输入 Todo" v-model="todoItem">
+                    <template slot="prepend">待办事项</template>
+                </el-input>
+            </el-col>
+            <el-col :span="8">
+                <el-button v-on:click="handleAddTodoItem" type="primary">添加</el-button>
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="24">
+                <el-card class="box-card">
+                    <div slot="header">
+                        <span>待办事项列表</span>
+                    </div>
+                    <div v-if="todoList.length">
+                        <el-row v-for="todo in todoList" :key="todo.id" :gutter="20">
+                            <el-col :span="20">
+                                {{ todo.content }}
+                            </el-col>
+                            <el-col :span="4">
+                                <el-button v-on:click="handleRemoveTodoItem(todo)" type="danger" icon="el-icon-delete" circle></el-button>
+                            </el-col>
+                        </el-row>
+                    </div>
+                    <p v-else>待办事项列表为空</p>
+                </el-card>
+            </el-col>
+        </el-row>
+    </div>
+
+    <script>
+		axios.defaults.baseURL = 'http://localhost:8080/api';
+
+		var rootVm = new Vue({
+			el: '#root',
+			data: {
+				todoList: [],
+				todoItem: ''
+			},
+			methods: {
+				// 删除待办事项单击事件处理函数
+				handleRemoveTodoItem: function(todo) {
+					var _this = this;
+					axios.delete('/todoItem/' + todo.id)
+						.then(function(rsp) {
+							if (rsp.status === 200) {
+								_this.$message({
+									message: rsp.data.msg,
+									type: 'success'
+								});
+
+								_this.fetchAllTodoList();
+							}
+						})
+						.catch(function(err) {
+							console.error(err);
+						});
+				},
+				// 获取所有待办事项
+				fetchAllTodoList: function() {
+					var _this = this;
+					axios.get('/todoList')
+						.then(function(rsp) {
+							if (rsp.status === 200) {
+								_this.$data.todoList = rsp.data.data;
+							}
+						})
+						.catch(function(err) {
+							console.error(err);
+						});
+				},
+				// 添加待办事项处理函数
+				handleAddTodoItem: function() {
+					var _this = this;
+					var todoItemContent = this.$data.todoItem;
+					if (todoItemContent) {
+						var todoItemForm = new FormData();
+						todoItemForm.append('content', todoItemContent);
+
+						axios.put('/todoItem', todoItemForm)
+							.then(function(rsp) {
+								if (rsp.status === 200) {
+									_this.$message({
+										message: rsp.data.msg,
+										type: 'success'
+									});
+
+									_this.$data.todoItem = '';
+									_this.fetchAllTodoList();
+								}
+							})
+							.catch(function(err) {
+								console.error(err);
+							})
+					} else {
+						this.$message({
+							message: '请输入待办事项',
+							duration: 2000
+						});
+					}
+				}
+			},
+			created() {
+				this.fetchAllTodoList();
+			}
+		});
+    </script>
 </body>
 </html>

@@ -3,8 +3,12 @@ package com.example.service;
 import com.example.common.ServerResponse;
 import com.example.pojo.TodoItem;
 
-public interface ITodoService {
-    public ServerResponse<TodoItem> findTodoItemById(int id);
+import java.util.List;
 
-    public ServerResponse<TodoItem> addTodoItem(TodoItem todoItem);
+public interface ITodoService {
+    ServerResponse<List<TodoItem>> findTodoList();
+
+    ServerResponse addTodoItem(TodoItem todoItem);
+
+    ServerResponse removeTodoItemById(Integer id);
 }

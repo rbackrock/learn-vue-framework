@@ -2,6 +2,8 @@ package com.example.dao;
 
 import com.example.pojo.TodoItem;
 
+import java.util.List;
+
 public interface TodoItemMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -16,4 +18,8 @@ public interface TodoItemMapper {
     int updateByPrimaryKeyWithBLOBs(TodoItem record);
 
     int updateByPrimaryKey(TodoItem record);
+
+    List<TodoItem> selectAll();
+
+    int removeTodoItemById(Integer id);
 }
