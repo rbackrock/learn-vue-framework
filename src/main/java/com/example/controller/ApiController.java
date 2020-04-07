@@ -19,4 +19,9 @@ public class ApiController {
     public ServerResponse<TodoItem> findItem(@PathVariable Integer id) {
         return iTodoService.findTodoItemById(id);
     }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "todoItem")
+    public ServerResponse<TodoItem> addItem(TodoItem todoItem) {
+        return iTodoService.addTodoItem(todoItem);
+    }
 }

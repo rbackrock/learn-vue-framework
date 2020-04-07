@@ -5,4 +5,6 @@ import com.example.pojo.TodoItem;
 
 public interface ITodoService {
     public ServerResponse<TodoItem> findTodoItemById(int id);
+
+    public ServerResponse<TodoItem> addTodoItem(TodoItem todoItem);
 }

@@ -17,4 +17,13 @@ public class TodoServiceImpl implements ITodoService {
         TodoItem todoItem = todoItemMapper.selectByPrimaryKey(id);
         return ServerResponse.createBySuccess("test success", todoItem);
     }
+
+    @Override
+    public ServerResponse<TodoItem> addTodoItem(TodoItem todoItem) {
+        if (todoItemMapper.insertSelective(todoItem) > 0) {
+            return ServerResponse.createByErrorMessage("添加成功");
+        }
+
+        return ServerResponse.createByErrorMessage("添加失败");
+    }
 }

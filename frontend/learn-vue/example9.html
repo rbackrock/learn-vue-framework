@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- 引入 Vue -->
+  <script src="./js/vue.js"></script>
+  <!-- 引入自定义的 vue 组件 -->
+  <script src="./js/vue.component.js"></script>
+  <!-- 引入 axios 异步请求库 -->
+  <script src="./js/es6-promise.min.js"></script>
+  <script src="./js/axios.js"></script>
+</head>
+<body>
+  <div id="app" >
+    <div v-for="blog in blogs">
+      <blog v-bind:title="blog.title" v-bind:content="blog.content">这里是文章的 footer</blog>
+      <hr />
+    </div>
+  </div>
+
+  <script>
+    /**
+     * 
+     * 这个例子引入了 axios 异步请求库，因为用到了 ECMAScript6 的 Promise 而老旧版本的浏览器不支持，所以额外引入了 es6-promise.min.js
+     * 
+     **/
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        blogs: []
+      },
+      methods: {
+        fetchPost: function() {
+          var _this = this;
+          axios.get('./mock/blog.json')
+          .then(function(rsp) {
+            if (rsp.status === 200) {
+              _this.$data.blogs = rsp.data;
+            }
+          })
+          .catch(function(err) {
+            console.error(err);
+          });
+        } 
+      },
+      created: function() {
+        this.fetchPost();
+      }
+    });
+  </script>
+</body>
+</html>
