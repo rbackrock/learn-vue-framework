@@ -144,7 +144,9 @@ new Vue({
 
 [example7.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example7.html)
 
-### 表单
+### 表单/Axios
+
+* 引入 axios 异步请求库的基本使用
 
 [example8.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example8.html)
 
