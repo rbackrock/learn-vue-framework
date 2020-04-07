@@ -4,7 +4,7 @@
 * Node.js / npm
 * CSS 预处理器
 * Webpack
-* 介绍 Charles 抓包工具解决开发环境下的跨域问题
+* Charles 解决开发环境下的跨域问题
 
 
 
