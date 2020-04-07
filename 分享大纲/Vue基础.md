@@ -150,5 +150,5 @@ new Vue({
 
 ### 自定义组件
 
-代码演示
+[example9.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example9.html)
 
