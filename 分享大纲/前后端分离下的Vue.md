@@ -193,6 +193,35 @@ E2E Testing # E2E 的单元测试框架
 
 按需选择就可以，为了展示这次分享的核心内容，这里我们选择 `Babel` ，`Router` ，`Vuex` ，`CSS Pre-processors`
 
+选择完成以后，还会有几项提示需要设置，如下：
+
+```bash
+# 是否使用 history 模式的风格，如果使用这种风格，你的地址栏应该类似这个样子 localhost:8000/about 但是还有另一种路由模式是哈希模式，它看上去像这个样子 localhost:8000/#/about
+Use history mode for router? (Requires proper server setup for index fallback in production) (Y/n)
+```
+
+```bash
+# 如果你选择使用 CSS 预处理器，会让你选择以下几种
+Sass/SCSS (with dart-sass)
+Sass/SCSS (with node-sass)
+Less
+Stylus
+```
+
+```bash
+# 这是询问类似 babel 或者 eslint 的配置文件放哪里，有两种选择，一种是独立出来在特定文件里设置，另一种是直接在 package.json 里进行设置，这里推荐独立出来，选择 In dedicated config files
+Where do you prefer placing config for Babel, ESLint, etc.? (Use arrow keys)
+In dedicated config files
+In package.json
+```
+
+```bash
+# 如果以后创建的项目就用以上所有配置的话就选择 y 否则 n
+Save this as a preset for future projects? (y/N)
+```
+
+
+
 另外，官方脚手架也提供图形化界面来进行创建，输入如下命令即可：
 
 ``` bash
@@ -276,6 +305,8 @@ vue-cli-service build [options] [entry|pattern]
 
 
 
+
+
 # Vue 单文件组件
 
 前后端分离的项目最佳实践是使用 Vue 单位件组件配合现代前端开发的工具链来进行开发
@@ -298,12 +329,6 @@ vue-cli-service build [options] [entry|pattern]
 ![Vue 单文件组件](https://cn.vuejs.org/images/vue-component.png)
 
 
-
-
-
-## 目录结构
-
-介绍各目录作用以及如何进行组件化前端开发
 
 ## 前端路由
 
