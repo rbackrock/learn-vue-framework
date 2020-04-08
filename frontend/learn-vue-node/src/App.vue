@@ -30,7 +30,9 @@ export default {
   html, body, #app {
     height: 100%;
   }
+</style>
 
+<style lang="scss" scoped>
   .header-text {
     text-align: center;
     padding: 20px 0;
