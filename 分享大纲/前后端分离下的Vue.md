@@ -244,7 +244,35 @@ vue-cli-service build [options] [entry|pattern]
     --watch       监听文件变化
 ```
 
+利用 Vue 脚手架生成好的项目关键文件及目录解释：
 
+```
+.
+├── /node_modules # Node.js 项目需要的包都下载在这里
+│
+├── /public # Vue 需要的 HTML 模板和例如网站图标都放在这里
+│
+├── /src # 源代码文件放这里
+│   │
+│   ├── /assets # 项目需要的静态资源放这里，比如图片 Logo 什么的
+│   │
+│   ├── /components # 抽离出可以复用的 .vue 组件放这里
+│   │
+│   ├── /router # 项目路由相关的 js 文件放这里
+│   │
+│   ├── /store # 项目状态相关的 js 文件放这里
+│   │
+│   ├── /viesw # 作为页面的 .vue 组件放这里
+│   │
+│   ├── App.vue # 页面的主入口
+│   │
+│   └── main.js # 项目的主入口，整个项目从这里开始
+│ 
+├── .browserslistrc # 浏览器的支持度配置
+│ 
+└── package.json # Node.js 整个项目的描述和配置的文件
+.
+```
 
 
 
