@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { TODOLIST_REQUEST, TODOLIST_SUCCESS, TODOLIST_FAILURE } from './mutation-types'
+import * as actionTypes from '@/store/mutation-types';
 import * as todoService from '@/service/todo'
 
 Vue.use(Vuex)
@@ -10,20 +10,27 @@ export default new Vuex.Store({
     todoList: []
   },
   mutations: {
-    [TODOLIST_SUCCESS](state, payload) {
+    [actionTypes.TODOLIST_SUCCESS](state, payload) {
       state.todoList = payload.todoList
     },
-    [TODOLIST_FAILURE](state) {
+    [actionTypes.TODOLIST_FAILURE](state) {
       state.todoList = []
     }
   },
   actions: {
-    [TODOLIST_REQUEST](context) {
+    [actionTypes.TODOLIST_REQUEST](context) {
       todoService.queryTodoList()
-      .then(rsp => context.commit(TODOLIST_SUCCESS, {
+      .then(rsp => context.commit(actionTypes.TODOLIST_SUCCESS, {
         todoList: rsp.data.data
-      }))
-      .catch(err => context.commit(TODOLIST_FAILURE))
+      }), err => context.commit(actionTypes.TODOLIST_FAILURE))
+    },
+    [actionTypes.TODOLIST_ADD](context, payload) {
+      todoService.addTodoItem(payload.form)
+      .then(rsp => context.dispatch(actionTypes.TODOLIST_REQUEST), err => context.commit(actionTypes.TODOLIST_FAILURE))
+    },
+    [actionTypes.TODOLIST_DELETE](context, payload) {
+      todoService.deleteTodoItem(payload.id)
+      .then(rsp => context.dispatch(actionTypes.TODOLIST_REQUEST), err => context.commit(actionTypes.TODOLIST_FAILURE))
     }
   },
   modules: {

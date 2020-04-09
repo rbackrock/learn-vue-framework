@@ -3,7 +3,7 @@
     <el-container style="height: 100%;">
       <el-header>
         <el-row :gutter="20">
-          <el-col :span="12" :offset="6"><div class="header-text">我是 header</div></el-col>
+          <el-col :span="12" :offset="6"><Header /></el-col>
         </el-row>
       </el-header>
       <el-container>
@@ -18,10 +18,12 @@
 
 <script>
 import NavMenu from '@/components/NavMenu.vue'
+import Header from '@/components/Header.vue'
 
 export default {
   components: {
-    NavMenu
+    NavMenu,
+    Header
   }
 }
 </script>
@@ -29,12 +31,5 @@ export default {
 <style lang="scss">
   html, body, #app {
     height: 100%;
-  }
-</style>
-
-<style lang="scss" scoped>
-  .header-text {
-    text-align: center;
-    padding: 20px 0;
   }
 </style>
