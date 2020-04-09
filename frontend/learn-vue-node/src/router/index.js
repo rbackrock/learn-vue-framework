@@ -33,4 +33,10 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  console.log(to, from)
+  console.log('进入目标路由之前的逻辑代码可以放这里')
+  next()
+})
+
 export default router
