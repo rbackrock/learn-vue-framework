@@ -26,6 +26,8 @@
      * 
      * 这个例子引入了 axios 异步请求库，因为用到了 ECMAScript6 的 Promise 而老旧版本的浏览器不支持，所以额外引入了 es6-promise.min.js
      * 
+     * # this 指向问题是 JavaScript 的一个需要重视的问题
+     * 
      **/
     var vm = new Vue({
       el: '#app',
@@ -34,6 +36,7 @@
       },
       methods: {
         fetchPost: function() {
+          // 不想这样处理 this 指向最简单的办法是使用箭头函数
           var _this = this;
           axios.get('./mock/blog.json')
           .then(function(rsp) {

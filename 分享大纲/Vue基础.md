@@ -101,11 +101,7 @@ new Vue({
 })
 ```
 
-### 引入
-
-[example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
-
-### Hello World
+### 引入/Hello World
 
 [example1.html](https://github.com/rbackrock/learn-vue-framework/blob/master/frontend/learn-vue/example1.html)
 
