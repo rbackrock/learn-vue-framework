@@ -3,7 +3,7 @@
 * ECMAScript6/7
 * Node.js / npm
 * CSS 预处理器
-* Webpack
+* 构建/打包工具
 * Charles 解决开发环境下的跨域问题
 
 
@@ -344,8 +344,25 @@ vue-cli-service build [options] [entry|pattern]
 
 ## 状态管理
 
-* 什么是状态管理以及为什么需要状态管理
-* 介绍什么是 vuex 以及简单使用
+中大型项目再多个组件中经常遇到需要同时使用一个状态的情况，为了不破坏单向数据流的简洁性而加入了状态管理
 
+### 什么是状态管理以及为什么需要状态管理
 
+应用遇到多个组件共享状态时，单向数据流的简洁性很容易被破坏
+
+#1 多个视图依赖于同一状态
+
+#2 来自不同视图的行为需要变更同一状态
+
+![vuex](https://vuex.vuejs.org/flow.png)
+
+### 介绍什么是 Vuex 以及简单使用
+
+Vuex 有五个核心概念
+
+* State 
+* Getter
+* Mutation
+* Action
+* Module
 
