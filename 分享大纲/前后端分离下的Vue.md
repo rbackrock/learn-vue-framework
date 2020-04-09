@@ -376,6 +376,10 @@ vue-cli-service build [options] [entry|pattern]
 
 ![vuex](https://vuex.vuejs.org/flow.png)
 
+
+
+![vueX](https://vuex.vuejs.org/vuex.png)
+
 ### 介绍什么是 Vuex 以及简单使用
 
 Vuex 有五个核心概念

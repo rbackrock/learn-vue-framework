@@ -10,6 +10,14 @@ export default new Vuex.Store({
     todoList: [],
     headerText: '我是 header'
   },
+  getters: {
+    handleTodoList(state) {
+      return state.todoList.map(todo => {
+        todo.content = `${todo.content} - ${todo.content.length}个字`
+        return todo
+      })
+    }
+  },
   mutations: {
     [actionTypes.TODOLIST_SUCCESS](state, payload) {
       state.todoList = payload.todoList
