@@ -1,10 +1,14 @@
 <template>
-  <h1 class="header-text">我是 header</h1>
+  <h1 class="header-text">{{ headerText }}</h1>
 </template>
 
 <script>
 export default {
-  
+  computed: {
+    headerText() {
+      return this.$store.state.headerText
+    }
+  }
 }
 </script>
 

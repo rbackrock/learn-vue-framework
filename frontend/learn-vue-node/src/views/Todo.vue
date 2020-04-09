@@ -38,7 +38,7 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="24"> <el-button type="primary">我要改变 header 文本</el-button></el-col>
+      <el-col :span="24"> <el-button type="primary" @click="changeHeaderText">我要改变 header 文本</el-button></el-col>
     </el-row>
   </div>
 </template>
@@ -78,6 +78,9 @@ export default {
     },
     queryAllTodoList() {
       this.$store.dispatch(actionTypes.TODOLIST_REQUEST)
+    },
+    changeHeaderText() {
+      this.$store.commit(actionTypes.HEADER_TEXT_CHANGE, '改变了的 header')
     }
   },
   computed: {

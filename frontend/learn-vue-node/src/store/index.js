@@ -7,7 +7,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    todoList: []
+    todoList: [],
+    headerText: '我是 header'
   },
   mutations: {
     [actionTypes.TODOLIST_SUCCESS](state, payload) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     [actionTypes.TODOLIST_FAILURE](state) {
       state.todoList = []
+    },
+    [actionTypes.HEADER_TEXT_CHANGE](state, text) {
+      state.headerText = text + new Date().toLocaleTimeString()
     }
   },
   actions: {
