@@ -1,5 +1,13 @@
 <template>
   <div class="about">
-    <div>这是关于页面</div>
+    <div>这是关于<span class="special">页面</span></div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+  .about {
+    .special {
+      color: #4688f1;
+    }
+  }
+</style>
