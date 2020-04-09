@@ -30,19 +30,19 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    [actionTypes.TODOLIST_REQUEST](context) {
+    [actionTypes.TODOLIST_REQUEST]({commit}) {
       todoService.queryTodoList()
-      .then(rsp => context.commit(actionTypes.TODOLIST_SUCCESS, {
+      .then(rsp => void commit(actionTypes.TODOLIST_SUCCESS, {
         todoList: rsp.data.data
-      }), err => context.commit(actionTypes.TODOLIST_FAILURE))
+      }), err => void commit(actionTypes.TODOLIST_FAILURE))
     },
-    [actionTypes.TODOLIST_ADD](context, payload) {
+    [actionTypes.TODOLIST_ADD]({dispatch, commit}, payload) {
       todoService.addTodoItem(payload.form)
-      .then(rsp => context.dispatch(actionTypes.TODOLIST_REQUEST), err => context.commit(actionTypes.TODOLIST_FAILURE))
+      .then(rsp => void dispatch(actionTypes.TODOLIST_REQUEST), err => void commit(actionTypes.TODOLIST_FAILURE))
     },
-    [actionTypes.TODOLIST_DELETE](context, payload) {
+    [actionTypes.TODOLIST_DELETE]({dispatch, commit}, payload) {
       todoService.deleteTodoItem(payload.id)
-      .then(rsp => context.dispatch(actionTypes.TODOLIST_REQUEST), err => context.commit(actionTypes.TODOLIST_FAILURE))
+      .then(rsp => void dispatch(actionTypes.TODOLIST_REQUEST), err => void commit(actionTypes.TODOLIST_FAILURE))
     }
   },
   modules: {
