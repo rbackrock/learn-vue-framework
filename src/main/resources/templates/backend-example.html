@@ -104,7 +104,7 @@
 						var todoItemForm = new FormData();
 						todoItemForm.append('content', todoItemContent);
 
-						axios.put('/todoItem', todoItemForm)
+						axios.post('/todoItem', todoItemForm)
                         .then(function(rsp) {
                             if (rsp.status === 200) {
                                 _this.$message({

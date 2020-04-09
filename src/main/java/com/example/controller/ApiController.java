@@ -22,7 +22,7 @@ public class ApiController {
         return iTodoService.findTodoList();
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "todoItem")
+    @RequestMapping(method = RequestMethod.POST, value = "todoItem")
     public ServerResponse addItem(TodoItem todoItem) {
         return iTodoService.addTodoItem(todoItem);
     }
