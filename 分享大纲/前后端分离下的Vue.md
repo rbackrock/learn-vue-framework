@@ -144,6 +144,26 @@ license # 项目开源许可证类型
 
 填写完信息以后会再根目录生成 `package.json` 文件，这个文件描述了项目的基本信息，其中还有执行命令，项目使用的 Node.js 包等重要信息，每个 Node.js 项目都一定会有该文件
 
+## 使用 npm 安装包
+
+* 全局安装
+
+``` bash
+npm i -g 
+```
+
+* 安装在 `devDependencies`
+
+``` bash
+npm i -D
+```
+
+* 安装在 `dependencies`
+
+``` bash
+npm i -S
+```
+
 
 
 # Vue 官方脚手架
@@ -167,7 +187,7 @@ vue --version
 vue create learn-vue-cli
 ```
 
-> 如果你在 Windows 上通过 minTTY 使用 Git Bash，交互提示符并不工作。你必须通过 `winpty vue.cmd create hello-world` 启动这个命令。不过，如果你仍想使用 `vue create hello-world`，则可以通过在 `~/.bashrc` 文件中添加以下行来为命令添加别名。 `alias vue='winpty vue.cmd'` 你需要重新启动 Git Bash 终端会话以使更新后的 bashrc 文件生效。
+> 如果你在 Windows 上通过 minTTY 使用 Git Bash，交互提示符并不工作。你必须通过 `winpty vue.cmd create hello-world` 启动这个命令。不过，如果你仍想使用 `vue create hello-world`，则可以通过在 `~/.bashrc` 文件中添加以下行来为命令添加别名。 `alias vue='winpty vue.cmd'` 你需要重新启动 Git Bash 终端会话以使更新后的 bashrc 文件生效
 
 执行创建命令以后，会有两种设置
 
