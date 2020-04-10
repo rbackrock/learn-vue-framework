@@ -6,7 +6,7 @@
 
 单独讲解的纯前端代码保存于根目录的 [frontend/learn-vue](https://github.com/rbackrock/learn-vue-framework/tree/master/frontend/learn-vue) 文件夹
 
-基于 Vue 脚手架讲解路由和状态管理的代码保存于根目录 [frontend/learn-vue-cli](https://github.com/rbackrock/learn-vue-framework/tree/master/frontend/learn-vue-cli) 文件夹
+基于 Vue 脚手架自动生成一行代码未动的代码保存于根目录 [frontend/learn-vue-cli](https://github.com/rbackrock/learn-vue-framework/tree/master/frontend/learn-vue-cli) 文件夹
 
 前后端分离的前端相关代码保存于根目录的 [frontend/learn-vue-node](https://github.com/rbackrock/learn-vue-framework/tree/master/frontend/learn-vue-node) 文件夹
 
