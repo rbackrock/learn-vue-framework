@@ -117,29 +117,6 @@ $ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taoba
   --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
 ```
 
-## 解决跨域
-
-假设后端的 API 接口是这样的：`http://localhost:8080/api/todoList`
-
-假设 Vue 项目跑起来的请求地址是这样的：`http://localhost:8081/`
-
-在项目根目录创建一个名为 `vue.config.js` 的 js 文件添加如下配置：
-
-```javascript
-module.exports = {
-  devServer: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8080/',
-        changeOrigin: true
-      }
-    }
-  }
-}
-```
-
-更为完整的详细配置请参考 [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware#proxycontext-config) 
-
 
 
 # Node.js 项目简要介绍
@@ -345,7 +322,36 @@ vue-cli-service build [options] [entry|pattern]
 .
 ```
 
+## 解决跨域
 
+假设后端的 API 接口是这样的：
+
+`http://localhost:8080/api/todoList`
+
+假设 Vue 项目跑起来的请求地址是这样的：
+
+`http://localhost:8081/`
+
+假设 Vue 项目请求待办列表的请求是这样的：
+
+`http://localhost:8081/api/todoList`
+
+在项目根目录创建一个名为 `vue.config.js` 的 js 文件添加如下配置：
+
+```javascript
+module.exports = {
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080/',
+        changeOrigin: true
+      }
+    }
+  }
+}
+```
+
+更为完整的详细配置请参考 [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware#proxycontext-config) 
 
 
 

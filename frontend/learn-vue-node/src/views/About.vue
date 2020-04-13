@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
   .about {
     .special {
       color: #4688f1;
