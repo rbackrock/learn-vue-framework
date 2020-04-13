@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="stylus">
   html, body, #app {
     height: 100%;
   }

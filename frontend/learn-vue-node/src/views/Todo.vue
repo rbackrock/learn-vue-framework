@@ -94,7 +94,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
   .todo-text {
     height: 40px;
     line-height: 40px;
