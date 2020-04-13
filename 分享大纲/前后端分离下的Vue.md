@@ -4,9 +4,8 @@
 * Node.js / npm
 * CSS 预处理器
 * 构建/打包工具
-* Charles 解决开发环境下的跨域问题
-
-
+* ~~Charles 解决开发环境下的跨域问题~~
+* 通过 Vue CLI 脚手架提供的针对集成的  [webpack-dev-server](https://github.com/webpack/webpack-dev-server) 进行配置解决开发环境下的跨域问题
 
 # 准备工作
 
@@ -117,6 +116,29 @@ $ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taoba
   --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
 ```
+
+## 解决跨域
+
+假设后端的 API 接口是这样的：`http://localhost:8080/api/todoList`
+
+假设 Vue 项目跑起来的请求地址是这样的：`http://localhost:8081/`
+
+在项目根目录创建一个名为 `vue.config.js` 的 js 文件添加如下配置：
+
+```javascript
+module.exports = {
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080/',
+        changeOrigin: true
+      }
+    }
+  }
+}
+```
+
+更为完整的详细配置请参考 [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware#proxycontext-config) 
 
 
 
