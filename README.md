@@ -8,6 +8,7 @@
 
 基于 Vue 脚手架自动生成一行代码未动的代码保存于根目录 [frontend/learn-vue-cli](https://github.com/rbackrock/learn-vue-framework/tree/master/frontend/learn-vue-cli) 文件夹
 
+去除 ElementUI 只有纯粹的 vue.js vuex vue-route 展示编写思路的相关代码保存于根目录的 [learn-vue-sample](https://github.com/rbackrock/learn-vue-framework/tree/master/frontend/learn-vue-sample) 文件夹
+
 前后端分离的前端相关代码保存于根目录的 [frontend/learn-vue-node](https://github.com/rbackrock/learn-vue-framework/tree/master/frontend/learn-vue-node) 文件夹
 
-去除 ElementUI 只有纯粹的 vue.js vuex vue-route 展示编写思路的相关代码保存于根目录的 [learn-vue-sample](https://github.com/rbackrock/learn-vue-framework/tree/master/frontend/learn-vue-sample) 文件夹
