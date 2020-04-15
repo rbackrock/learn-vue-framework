@@ -75,11 +75,11 @@ export default {
 <style lang="stylus" scoped>
   .container
     .list-container
-      padding: 20px 0
+      padding 20px 0
 
       .btn-delete
         padding 0 20px
-        color: #569cd6
+        color #569cd6
         cursor pointer
 </style>
   

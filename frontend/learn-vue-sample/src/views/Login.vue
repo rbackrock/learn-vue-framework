@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .container
     padding 0 20px
 </style>
