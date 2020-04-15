@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import * as actionTypes from '@/store/mutation-types';
-import * as todoService from '@/service/todo'
+import * as api from '@/api/todo'
 
 Vue.use(Vuex)
 
@@ -31,17 +31,17 @@ export default new Vuex.Store({
   },
   actions: {
     [actionTypes.TODOLIST_REQUEST]({commit}) {
-      todoService.queryTodoList()
+      api.queryTodoList()
       .then(rsp => void commit(actionTypes.TODOLIST_SUCCESS, {
         todoList: rsp.data.data
       }), err => void commit(actionTypes.TODOLIST_FAILURE))
     },
     [actionTypes.TODOLIST_ADD]({dispatch, commit}, payload) {
-      todoService.addTodoItem(payload.form)
+      api.addTodoItem(payload.form)
       .then(rsp => void dispatch(actionTypes.TODOLIST_REQUEST), err => void commit(actionTypes.TODOLIST_FAILURE))
     },
     [actionTypes.TODOLIST_DELETE]({dispatch, commit}, payload) {
-      todoService.deleteTodoItem(payload.id)
+      api.deleteTodoItem(payload.id)
       .then(rsp => void dispatch(actionTypes.TODOLIST_REQUEST), err => void commit(actionTypes.TODOLIST_FAILURE))
     }
   },
