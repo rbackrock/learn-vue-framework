@@ -36,7 +36,7 @@ export default new Vuex.Store({
             todoList: rsp.data.data
           })
         }
-      }, err => context.commit(mutationTypes.FETCH_TODOLIST_FAILURE))
+      }, err => void context.commit(mutationTypes.FETCH_TODOLIST_FAILURE))
     }
   },
   modules: {

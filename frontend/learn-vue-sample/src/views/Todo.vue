@@ -52,7 +52,7 @@ export default {
             this.$data.todoItem = ''
             this.queryTodoList()
           }
-        }, err => console.error(err))
+        }, err => void console.error(err))
       } else {
         alert('请输入待办事项')
       }
@@ -63,7 +63,7 @@ export default {
         if (rsp.status === HTTP_SUCCESS_STATUS) {
           this.queryTodoList()
         }
-      }, err => console.error(err))
+      }, err => void console.error(err))
     }
   },
   created() {
