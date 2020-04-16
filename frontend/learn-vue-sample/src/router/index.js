@@ -11,12 +11,12 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/login',
-    name: 'login',
     component: Login
   },
   {
     path: '/admin',
     component: Main,
+    redirect: '/admin/todo',
     children: [
       {
         path: 'todo',
@@ -27,6 +27,14 @@ const routes = [
         component: About
       }
     ]
+  },
+  {
+    path: '/',
+    redirect: 'login'
+  },
+  {
+    path: '*',
+    redirect: 'login'
   }
 ]
 
