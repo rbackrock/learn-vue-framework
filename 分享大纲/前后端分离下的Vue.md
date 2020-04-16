@@ -410,6 +410,8 @@ module.exports = {
 
 ### 介绍什么是 Vuex 以及简单使用
 
+> 存储在 Vuex 中的数据和 Vue 实例中的 `data` 遵循相同的规则，例如状态对象必须是纯粹 (plain) 的
+
 Vuex 有五个核心概念
 
 * State 
@@ -417,4 +419,6 @@ Vuex 有五个核心概念
 * Mutation
 * Action
 * Module
+
+
 
