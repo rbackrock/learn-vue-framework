@@ -26,7 +26,7 @@ export default new Vuex.Store({
   },
   actions: {
     [mutationTypes.FETCH_TODOLIST_REQUEST](context) {
-      const baseReqUrl = 'http://localhost:8081/api'
+      const baseReqUrl = 'api'
       const HTTP_SUCCESS_STATUS = 200;
 
       axios.get(`${baseReqUrl}/todoList`)

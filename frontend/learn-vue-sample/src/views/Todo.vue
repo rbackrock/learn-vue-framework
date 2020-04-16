@@ -16,7 +16,7 @@
 import axios from 'axios'
 import * as mutationTypes from '@/store/mutation-types'
 
-const baseReqUrl = 'http://localhost:8081/api'
+const baseReqUrl = 'api'
 const HTTP_SUCCESS_STATUS = 200;
 
 export default {
